@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+addopts = "-p no:cacheprovider"
+env_files = [".env.test"]
+asyncio_mode = "auto"
