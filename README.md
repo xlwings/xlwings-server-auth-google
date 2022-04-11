@@ -10,8 +10,10 @@ NOTE: while this repo uses FastAPI, xlwings is framework-agnostic, so it's easy 
 
 ## Instructions
 
-1. Click the button to deploy this repo to a free server on Render (or use your favorite service that works with a `Dockerfile`, e.g., Google Cloud Run):  
+1. Click one of the following buttons to deploy this repo to your favorite service:    
    [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+   [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
 
 2. You will be asked to provide two environment variables:
    * `XLWINGS_LICENSE_KEY`: visit https://www.xlwings.org/trial to get a free trial license for xlwings PRO. Note that xlwings PRO is free for non-commercial use, see: https://docs.xlwings.org/en/stable/pro.html
