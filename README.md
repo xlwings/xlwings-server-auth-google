@@ -15,7 +15,7 @@ NOTE: while this repo uses FastAPI, xlwings is framework-agnostic, so it's easy 
 
    [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
 
-2. You will be asked to provide two environment variables:
+2. Render will ask you to provide two environment variables (make sure to set them up manually for Google Cloud Run):
    * `XLWINGS_LICENSE_KEY`: visit https://www.xlwings.org/trial to get a free trial license for xlwings PRO. Note that xlwings PRO is free for non-commercial use, see: https://docs.xlwings.org/en/stable/pro.html
    * `GOOGLE_ALLOWED_DOMAINS`: type in your domain(s) that you use on Google Workspace in the form of a list, i.e., `["yourdomain.com"]`.
 3. Once the server is up and running, open a new Google Sheet, go to `Extensions` > `Apps Script` and paste the content of `xlwings.js` into an Apps Script module. At the top, replace `URL` with the actual url of your backend. Now you can run the three functions: `hello1`, `hello2` and `hello3` that demonstrate the use of authentication and authorization.
@@ -74,16 +74,6 @@ NOTE: this is only required if you want to query your groups from Google Directo
 
 ### FastAPI
 
-1. Now you can use the `is_member` function from `directory_google.py` by switching the respective import statement at the top of the `auth.py` module. By providing one or multiple Google group emails, the app will require that the user is part of that group. So you'll need to change the following endpoint under `app/api/myspreadsheet.py` and replace `"group_admin"` with the email of the Google group:
-
-    ```python
-    @router.post("/hello3")
-    async def hello3(
-        data: dict = Body,
-        current_user: User = Security(authorize, scopes=["mygroup@mydomain.com"])
-    ):
-        pass
-    ```
-
+1. Now you can use the `is_member` function from `directory_google.py` by switching the `DIRECTORY` env var to `google` and by updating the `SCOPES` env var to a list of email addresses corresponding to the google group, e.g., `SCOPOES=["mygroup@mydomain.com"]`.
 2. Paste the JSON string from the downloaded file from GCP as your `GOOGLE_SERVICE_ACCOUNT_INFO` env var (make sure to enclose it in single quotes if you run things locally and paste this into the `.env` file).
 3. Set the `GOOGLE_DELEGATE_EMAIL` env var to your own email as this account will eventually be used to access the Google directory, see https://developers.google.com/admin-sdk/directory/v1/guides/delegation for further information.

@@ -1,17 +1,17 @@
 // TODO: Replace URL with your own URL
-const base_url = "URL/myspreadsheet";
+const base_url = "URL";
 const token = ScriptApp.getOAuthToken();
 
 function hello1() {
-  runPython(base_url + "/hello1", { apiKey: token });
+  runPython(base_url + "/myspreadsheet/hello1", { apiKey: token });
 }
 
 function hello2() {
-  runPython(base_url + "/hello2", { apiKey: token });
+  runPython(base_url + "/myspreadsheet/hello2", { apiKey: token });
 }
 
 function hello3() {
-  runPython(base_url + "/hello3", { apiKey: token });
+  runPython(base_url + "/myspreadsheet/hello3", { apiKey: token });
 }
 
 /**

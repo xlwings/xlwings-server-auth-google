@@ -1,6 +1,7 @@
 import xlwings as xw
 from fastapi import APIRouter, Body, Security
 
+from .. import settings
 from ..core.auth import User, authenticate, authorize
 
 # Require authentication for all endpoints for this router
@@ -41,7 +42,7 @@ async def hello2(data: dict = Body, current_user: User = Security(authorize)):
 @router.post("/hello3")
 async def hello3(
     data: dict = Body,
-    current_user: User = Security(authorize, scopes=["group_admin"]),
+    current_user: User = Security(authorize, scopes=settings.scopes),
 ):
     """You can require specific permissions by specifying scopes. In this endpoint, we
     require the user to be an admin. The `auth` module will enforce this by checking if

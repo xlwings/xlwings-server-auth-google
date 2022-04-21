@@ -8,10 +8,11 @@ from pydantic import BaseModel
 
 from .. import settings
 
-# Replace '.directory_env' with '.directory_google'
-# to query groups from Google Directory. Alternatively,
-# provide your own implementation for Okta, Azure AD, LDAP, etc.
-from .directory_env import is_member
+
+if settings.directory == "env":
+    from .directory_env import is_member
+elif settings.directory == "google":
+    from .directory_google import is_member
 
 # See: https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery
 GOOGLE_DISCOVERY_URL = "https://accounts.google.com/.well-known/openid-configuration"
