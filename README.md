@@ -74,6 +74,6 @@ NOTE: this is only required if you want to query your groups from Google Directo
 
 ### FastAPI
 
-1. Now you can use the `is_member` function from `directory_google.py` by switching the `DIRECTORY` env var to `google` and by updating the `SCOPES` env var to a list of email addresses corresponding to the google group, e.g., `SCOPOES=["mygroup@mydomain.com"]`.
+1. Now you can use the `is_member` function from `directory_google.py` by switching the `DIRECTORY` env var to `google` and by updating the `SCOPES` env var to a list of email addresses corresponding to the google group, e.g., `SCOPES=["mygroup@mydomain.com"]`.
 2. Paste the JSON string from the downloaded file from GCP as your `GOOGLE_SERVICE_ACCOUNT_INFO` env var (make sure to enclose it in single quotes if you run things locally and paste this into the `.env` file).
 3. Set the `GOOGLE_DELEGATE_EMAIL` env var to your own email as this account will eventually be used to access the Google directory, see https://developers.google.com/admin-sdk/directory/v1/guides/delegation for further information.
