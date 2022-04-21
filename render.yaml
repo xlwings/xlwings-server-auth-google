@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: xlwings-googlesheets-fastapi
+    name: xlwings-googlesheets-fastapi-auth
     env: docker
     region: ohio
     plan: free
