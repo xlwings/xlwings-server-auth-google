@@ -8,6 +8,10 @@ This is a sample repo with boilerplate code to build a FastAPI backend for Googl
 
 NOTE: while this repo uses FastAPI, xlwings is framework-agnostic, so it's easy enough to swap FastAPI with your favorite tool, whether that's Django, Flask, etc.
 
+## Google Sheets Template
+
+https://docs.google.com/spreadsheets/d/1r9vygz57zvgCrQzrIlyGhe6Gx32qR3GRSYfDN3damVc/template/preview
+
 ## Instructions
 
 1. Click one of the following buttons to deploy this repo to your favorite service:    
